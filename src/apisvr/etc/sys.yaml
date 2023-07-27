@@ -5,8 +5,9 @@ CpuThreshold: 0
 Log:
   Encoding: plain
 Database:
-  DBType: mysql
-  DSN: root:password@tcp(127.0.0.1:3306)/iThings?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  DBType: pgsql
+  DSN: host=127.0.0.1 user=gleke password=gleke dbname=iThings port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
 CacheRedis:
   - Host: 127.0.0.1:6379
     Pass:
@@ -25,13 +26,3 @@ UserOpt:
 Map:
   Mode: baidu
   AccessKey: UGmGEIzlEQWtRjC1uGb6f0oypHPQC3Bs
-WrongPasswordCounter:
-  Captcha: 4 # 连续输错密码次数上限，需要输验证码
-  Account:
-    - triggerTimes: 8  # 触发次数 默认 8
-      statistics: 5    # 统计时间 默认 5 单位：分钟
-      forbiddenTime: 2 # 冻结时长 默认 2 单位：分钟
-  Ip:
-    - triggerTimes: 8  # 触发次数 默认 8
-      statistics: 5    # 统计时间 默认 5 单位：分钟
-      forbiddenTime: 2 # 冻结时长 默认 2 单位：分钟

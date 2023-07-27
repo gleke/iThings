@@ -1,4 +1,4 @@
-#api网关接口代理模块-apisvr
+#api网关接口代理模块配置-apisvr
 Name: api
 Host: 0.0.0.0
 CpuThreshold: 0
@@ -30,7 +30,7 @@ Proxy:
       Dest: http://127.0.0.1:8000
     - Router: /api/v1/oss/
       DeletePrefix: true
-      Dest: http://127.0.0.1:9000
+      Dest: 127.0.0.1:9000
 DdEnable: true
 SysRpc:
   Enable: true
