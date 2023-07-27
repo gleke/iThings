@@ -57,13 +57,11 @@ func (p *Point) Scan(value interface{}) error {
 	switch value.(type) {
 	case []byte:
 		va := value.([]byte)
-		fmt.Errorf("scan point: : %T", p.parsePoint(va))
-		fmt.Errorf("failed to scan point: invalid type: %T", value)
+
 		return p.parsePoint(va)
 	case string:
 		va := value.(string)
-		fmt.Errorf("scan point: : %T", p.parsePoint([]byte(va)))
-		fmt.Errorf("failed to scan point: invalid type: %T", value)
+
 		return p.parsePoint([]byte(va))
 	default:
 		return fmt.Errorf("failed to scan point: invalid type: %T", value)
